@@ -41,9 +41,9 @@ struct ContentView: View {
         Spacer()
         Button(action: {
           setDiceNumbers()
-        }) {
+        }, label: {
           getRollButtonText()
-        }
+        })
         .background(Color.red)
       }
     }
