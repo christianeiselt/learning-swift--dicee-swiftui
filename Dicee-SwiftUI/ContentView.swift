@@ -12,6 +12,11 @@ struct ContentView: View {
   @State var leftDiceNumber = 1
   @State var rightDiceNumber = 1
 
+  fileprivate func setDiceNumbers() {
+    self.leftDiceNumber = Int.random(in: 1...6)
+    self.rightDiceNumber = Int.random(in: 1...6)
+  }
+
   var body: some View {
     ZStack {
       Image("background")
@@ -27,8 +32,7 @@ struct ContentView: View {
         .padding(.horizontal)
         Spacer()
         Button(action: {
-          self.leftDiceNumber = Int.random(in: 1...6)
-          self.rightDiceNumber = Int.random(in: 1...6)
+          setDiceNumbers()
         }) {
           Text("Roll")
             .font(.system(size: 50))
