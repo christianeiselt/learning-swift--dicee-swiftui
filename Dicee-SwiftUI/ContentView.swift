@@ -17,6 +17,14 @@ struct ContentView: View {
     self.rightDiceNumber = Int.random(in: 1...6)
   }
 
+  fileprivate func getRollButtonText() -> some View {
+    return Text("Roll")
+      .font(.system(size: 50))
+      .fontWeight(.heavy)
+      .foregroundColor(.white)
+      .padding(.horizontal)
+  }
+
   var body: some View {
     ZStack {
       Image("background")
@@ -34,11 +42,7 @@ struct ContentView: View {
         Button(action: {
           setDiceNumbers()
         }) {
-          Text("Roll")
-            .font(.system(size: 50))
-            .fontWeight(.heavy)
-            .foregroundColor(.white)
-            .padding(.horizontal)
+          getRollButtonText()
         }
         .background(Color.red)
       }
