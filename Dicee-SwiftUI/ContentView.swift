@@ -21,8 +21,8 @@ struct ContentView: View {
         Image("diceeLogo")
         Spacer()
         HStack {
-          DiceView(n: leftDiceNumber)
-          DiceView(n: rightDiceNumber)
+          DiceView(number: leftDiceNumber)
+          DiceView(number: rightDiceNumber)
         }
         .padding(.horizontal)
         Spacer()
@@ -44,10 +44,10 @@ struct ContentView: View {
 
 struct DiceView: View {
 
-  let n: Int
+  let number: Int
 
   var body: some View {
-    Image("dice\(n)")
+    Image("dice\(number)")
       .resizable()
       .aspectRatio(1, contentMode: .fit)
       .padding(.all)
